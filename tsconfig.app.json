@@ -14,8 +14,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "strict": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     },
 
     "noUnusedLocals": true,

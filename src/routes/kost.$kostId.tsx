@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useKost, UNPAM_VIKTOR } from "@/contexts/KostContext";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 
 import { StarRating } from "@/components/StarRating";
 import { motion } from "framer-motion";
