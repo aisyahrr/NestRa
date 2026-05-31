@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@500;700&family=Fraunces:ital,wght@0,700;0,900;1,900&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --font-heading: 'Fraunces', 'Nunito', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-mono: 'Nunito', ui-monospace, monospace;
+  --font-hand: 'Caveat', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-cyan-glow: var(--cyan-glow);
+  --color-purple-soft: var(--purple-soft);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+}
+
+:root {
+  /* === DOODLE LIME — Cute Neubrutalism === */
+  --radius: 1.25rem;
+
+  /* Canvas: bright lime green */
+  --background: oklch(0.92 0.22 130);
+  --foreground: oklch(0.16 0 0);
+
+  /* Cards: warm cream/white */
+  --card: oklch(0.99 0.01 100);
+  --card-foreground: oklch(0.16 0 0);
+  --popover: oklch(0.99 0.01 100);
+  --popover-foreground: oklch(0.16 0 0);
+
+  /* Primary: lime */
+  --primary: oklch(0.9 0.23 128);
+  --primary-foreground: oklch(0.16 0 0);
+
+  --secondary: oklch(0.78 0.18 350);   /* candy pink */
+  --secondary-foreground: oklch(0.16 0 0);
+
+  --muted: oklch(0.96 0.01 100);
+  --muted-foreground: oklch(0.45 0.02 100);
+
+  --accent: oklch(0.85 0.16 220);      /* sky */
+  --accent-foreground: oklch(0.16 0 0);
+
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Borders: PURE BLACK and thick */
+  --border: oklch(0.16 0 0);
+  --input: oklch(0.99 0.01 100);
+  --ring: oklch(0.16 0 0);
+
+  --chart-1: oklch(0.9 0.23 128);
+  --chart-2: oklch(0.78 0.18 350);
+  --chart-3: oklch(0.85 0.16 220);
+  --chart-4: oklch(0.85 0.18 80);
+  --chart-5: oklch(0.8 0.15 30);
+
+  /* Sidebar: cream with black borders */
+  --sidebar: oklch(0.99 0.01 100);
+  --sidebar-foreground: oklch(0.16 0 0);
+  --sidebar-primary: oklch(0.9 0.23 128);
+  --sidebar-primary-foreground: oklch(0.16 0 0);
+  --sidebar-accent: oklch(0.95 0.04 130);
+  --sidebar-accent-foreground: oklch(0.16 0 0);
+  --sidebar-border: oklch(0.16 0 0);
+  --sidebar-ring: oklch(0.9 0.23 128);
+
+  --cyan-glow: oklch(0.9 0.23 128);
+  --purple-soft: oklch(0.78 0.18 350);
+  --surface: oklch(0.99 0.01 100);
+  --surface-foreground: oklch(0.16 0 0);
+
+  --pastel-yellow: oklch(0.93 0.18 95);
+  --pastel-green: oklch(0.9 0.23 128);
+  --pastel-pink: oklch(0.86 0.13 350);
+  --pastel-blue: oklch(0.86 0.13 220);
+  --pastel-purple: oklch(0.85 0.12 300);
+
+  --window-bar: oklch(0.99 0.01 100);
+  --window-shadow: 10px 10px 0 0 oklch(0.16 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(oklch(0.16 0 0 / 0.10) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 900;
+  }
+}
+
+@layer utilities {
+  .font-hand { font-family: var(--font-hand); }
+  .font-mono-data { font-family: var(--font-body); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .blueprint-grid {
+    background-color: var(--color-card);
+    background-image: radial-gradient(oklch(0.16 0 0 / 0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .tech-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pill-tech {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    border: 2px solid var(--color-border);
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--color-card);
+  }
+
+  /* === Doodle Neubrutalism === */
+  .nb-border { border: 2.5px solid var(--color-border); }
+  .nb-border-thin { border: 2px solid var(--color-border); }
+  .nb-shadow { box-shadow: 5px 5px 0 0 var(--color-border); }
+  .nb-shadow-sm { box-shadow: 3px 3px 0 0 var(--color-border); }
+  .nb-shadow-lg { box-shadow: 7px 7px 0 0 var(--color-border); }
+  .glow-cyan { box-shadow: 4px 4px 0 0 var(--color-border); }
+  .glow-cyan-strong { box-shadow: 8px 8px 0 0 var(--color-border); }
+  .card-lift {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 5px 5px 0 0 var(--color-border);
+  }
+  .card-lift:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 0 var(--color-border);
+  }
+  .card-lift:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 var(--color-border);
+  }
+
+  .macbook-window {
+    background: var(--color-card);
+    border-radius: 28px;
+    box-shadow: var(--window-shadow);
+    overflow: hidden;
+    border: 2.5px solid var(--color-border);
+  }
+  .macbook-titlebar {
+    height: 44px;
+    background: var(--color-card);
+    color: var(--color-foreground);
+    border-bottom: 2.5px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .traffic-light {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+  }
+  .traffic-red { background: oklch(0.72 0.18 25); }
+  .traffic-yellow { background: oklch(0.82 0.16 85); }
+  .traffic-green { background: oklch(0.78 0.15 145); }
+
+  .bg-pastel-yellow { background-color: var(--pastel-yellow); }
+  .bg-pastel-green { background-color: var(--pastel-green); }
+  .bg-pastel-pink { background-color: var(--pastel-pink); }
+  .bg-pastel-blue { background-color: var(--pastel-blue); }
+  .bg-pastel-purple { background-color: var(--pastel-purple); }
+
+  /* Doodle decorations */
+  .doodle-star::before {
+    content: "✦";
+    position: absolute;
+    font-size: 28px;
+    color: var(--color-foreground);
+  }
+}
+
+@keyframes score-fill {
+  from { width: 0%; }
+  to { width: var(--score-width); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-score-fill {
+  animation: score-fill 0.8s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+/* Hide scrollbar tapi tetap bisa scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
